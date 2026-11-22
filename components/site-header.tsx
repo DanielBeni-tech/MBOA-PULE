@@ -1,34 +1,8 @@
-import { ArrowUpRight, Menu, Search } from "lucide-react";
+import { ArrowUpRight, Menu, Ticket } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark";
 
-const links = [
-  ["Accueil", "#accueil"],
-  ["Événements", "#evenements"],
-  ["Votes", "#votes"],
-  ["Organisateurs", "#organisateurs"],
-];
+const links = [["Accueil", "#accueil"], ["Événements", "#event-list"], ["Votes", "#event-list"], ["Organisateurs", "#organisateurs"]];
 
 export function SiteHeader() {
-  return (
-    <header className="absolute inset-x-0 top-0 z-20 px-5 md:px-10">
-      <div className="mx-auto flex h-[84px] max-w-[1320px] items-center justify-between border-b border-white/15">
-        <BrandMark light />
-        <nav aria-label="Navigation principale" className="hidden items-center gap-9 lg:flex">
-          {links.map(([label, href]) => <a key={label} href={href} className="text-[13px] font-semibold text-white/75 transition hover:text-white">{label}</a>)}
-        </nav>
-        <div className="hidden items-center gap-5 md:flex">
-          <a href="#evenements" aria-label="Rechercher un événement" className="grid size-10 place-items-center rounded-full border border-white/20 text-white transition hover:bg-white/10"><Search className="size-[17px]" /></a>
-          <a href="/login" className="text-[13px] font-semibold text-white/80 hover:text-white">Se connecter</a>
-          <a href="#evenements" className="inline-flex h-11 items-center gap-2 rounded-full bg-[#C7F36B] px-5 text-[13px] font-bold text-[#10152B] transition hover:bg-[#d5ff84]">Découvrir <ArrowUpRight className="size-4" /></a>
-        </div>
-        <details className="group relative md:hidden">
-          <summary aria-label="Ouvrir le menu" className="grid size-11 cursor-pointer list-none place-items-center rounded-full border border-white/20 text-white [&::-webkit-details-marker]:hidden"><Menu className="size-5" /></summary>
-          <nav aria-label="Navigation mobile" className="absolute right-0 top-14 flex w-64 flex-col gap-1 rounded-2xl border border-white/10 bg-[#151b35] p-3 shadow-2xl">
-            {links.map(([label, href]) => <a key={label} href={href} className="rounded-xl px-4 py-3 text-sm font-semibold text-white/80 hover:bg-white/10">{label}</a>)}
-            <a href="/login" className="rounded-xl px-4 py-3 text-sm font-semibold text-white/80 hover:bg-white/10">Se connecter</a>
-          </nav>
-        </details>
-      </div>
-    </header>
-  );
+  return <header id="accueil" className="sticky top-0 z-30 border-b border-[#ebe9e4] bg-white/95 px-5 backdrop-blur-md md:px-10"><div className="mx-auto flex h-[72px] max-w-[1320px] items-center justify-between"><BrandMark /><nav aria-label="Navigation principale" className="hidden items-center gap-8 lg:flex">{links.map(([label, href]) => <a key={label} href={href} className="relative py-2 text-[12px] font-semibold text-[#4e586a] transition hover:text-[#FF5C5C]">{label}</a>)}</nav><details className="group relative ml-auto mr-3 lg:hidden"><summary aria-label="Ouvrir le menu" className="grid size-10 cursor-pointer list-none place-items-center rounded-full border border-[#e8e6e1] text-[#10152B] [&::-webkit-details-marker]:hidden"><Menu className="size-4" /></summary><nav aria-label="Navigation mobile" className="absolute right-0 top-12 z-40 flex w-52 flex-col gap-1 rounded-2xl border border-[#e8e6e1] bg-white p-2 shadow-xl">{links.map(([label, href]) => <a key={label} href={href} className="rounded-xl px-3 py-2.5 text-[12px] font-semibold text-[#4e586a] hover:bg-[#F6F4EF] hover:text-[#FF5C5C]">{label}</a>)}<a href="#event-list" className="rounded-xl px-3 py-2.5 text-[12px] font-semibold text-[#4e586a] hover:bg-[#F6F4EF]">Mon ticket</a></nav></details><div className="flex items-center gap-2 sm:gap-4"><a href="#event-list" className="hidden items-center gap-1.5 text-[12px] font-semibold text-[#4e586a] transition hover:text-[#FF5C5C] sm:flex"><Ticket className="size-4" />Mon ticket</a><a href="/login" className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#10152B] px-4 text-[11px] font-bold text-[#10152B] transition hover:bg-[#10152B] hover:text-white">Connexion <ArrowUpRight className="size-3.5" /></a></div></div></header>;
 }

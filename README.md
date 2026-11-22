@@ -4,7 +4,7 @@
 
 ## Phase 1 — Identité, fondations et accueil
 
-La page d’accueil responsive pose le langage visuel Mboa Pulse : palette nuit/corail/vert citron, typographies Space Grotesk et Manrope, logo ticket-pulse original, navigation, recherche, cartes événement, catégories, campagne de vote mise en avant et appel destiné aux organisateurs. Les événements présentés sont des contenus de démonstration, pas des événements ni des inventaires de billets connectés à une source réelle.
+La page d’accueil responsive reprend le parcours de découverte observé sur le site de référence (navigation, bandeau d’information, recherche, choix événements/votes, filtres par catégorie et grille de cartes avec date, lieu, prix et organisateur), avec une identité visuelle originale Mboa Pulse : palette nuit/corail/vert citron, typographies Space Grotesk et Manrope, logo ticket-pulse original. La recherche, les filtres, la bascule événements/votes, les favoris et le partage sont interactifs sur les contenus de démonstration ; ils ne sont pas reliés à une source réelle.
 
 ### Démarrer en local
 
@@ -29,7 +29,8 @@ pnpm exec tsc --noEmit
 - `app/globals.css` — tokens visuels et styles globaux.
 - `components/brand-mark.tsx` — signature Mboa Pulse réutilisable.
 - `components/site-header.tsx` — navigation responsive.
-- `components/home-sections.tsx` — sections d’accueil et exemples d’événements.
+- `components/event-discovery-home.tsx` — recherche, filtres et cartes de démonstration inspirés de la structure fonctionnelle de la référence.
+- `components/home-sections.tsx` — appel organisateurs et pied de page.
 - `public/mboa-nightlife-hero.png` — photographie originale de la scène live.
 
 ## Périmètre actuel et suite
